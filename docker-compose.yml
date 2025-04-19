@@ -1,0 +1,20 @@
+services:
+  model-registry:
+    image: model-registry
+    container_name: model-registry_container
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./models:/app/models
+      - ./config:/app/config
+      - ./storage:/app/storage
+    environment:
+      - CONFIG_PATH=/app/config/local.yaml
+
+volumes:
+  models:
+  config:
+  storage:

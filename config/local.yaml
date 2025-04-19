@@ -1,0 +1,4 @@
+env: "local"  # local, dev, prod
+model_dir: "/app/models"
+database_path: "/app/storage/models.db"
+port: 8080
