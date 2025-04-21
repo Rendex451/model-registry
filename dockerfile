@@ -22,10 +22,8 @@ WORKDIR /app
 RUN addgroup -S appgroup && adduser -S -G appgroup appuser
 
 COPY --from=builder /app/model-registry .
-
 COPY --chmod=100 entrypoint.sh /entrypoint.sh
-
-RUN mkdir -p /app/storage /app/config /app/models
+COPY config/ config/
 
 EXPOSE 8080
 

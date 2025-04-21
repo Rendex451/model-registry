@@ -9,12 +9,10 @@ services:
       - "8080:8080"
     volumes:
       - ./models:/app/models
-      - ./config:/app/config
       - ./storage:/app/storage
     environment:
       - CONFIG_PATH=/app/config/local.yaml
 
 volumes:
   models:
-  config:
   storage:

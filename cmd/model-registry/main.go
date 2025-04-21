@@ -35,7 +35,7 @@ func main() {
 
 	modelRepo := repositories.NewModelRepository(db)
 	versionRepo := repositories.NewVersionRepository(db)
-	handlers.InitHandlers(modelRepo, versionRepo)
+	handlers.InitHandlers(modelRepo, versionRepo, logger)
 	logger.Info("Repositories initialized")
 
 	router := routes.SetupRouter()
